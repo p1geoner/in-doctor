@@ -1,8 +1,18 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import 'swiper/css';
+import 'swiper/css/navigation';
 
-const inter = Inter({ subsets: ["latin"] });
+import '@/assets/styles/variables.scss'
+import '@/assets/styles/normalize.scss';
+import '@/assets/styles/globals.scss'
+import '@/assets/styles/swiper.scss'
+import Header from "@/components/Layout/Header/Header";
+import Footer from "@/components/Layout/Footer/Footer";
+// import 'react-accessible-accordion/dist/fancy-example.css';
+
+
+const inter = Inter({ subsets: ["cyrillic", "latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -14,9 +24,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  inter.style.fontWeight = 700;
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru">
+      <body className={inter.className} >
+      <Header />
+      {children}
+      <Footer />
+      </body>
     </html>
   );
 }

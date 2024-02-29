@@ -1,0 +1,150 @@
+
+// text
+
+$fs_h1: 32px;
+$fs_h2: 24px;
+$fs_subtitle: 22px;
+$fs_large: 16px;
+$fs_default: 14px;
+$fs_small: 12px;
+
+// mediaLinks screen size values
+
+$m_tablet: 1200px;
+$m_phone: 650px;
+
+// borders
+
+$b_input: 1px solid var(--c_grey);
+
+// border radius
+
+$br_default: 8px;
+$br_secondary: 12px;
+
+// simple templates
+
+%flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+%flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+%main {
+  flex: 1 1 auto;
+}
+
+%section {
+  @extend %flex-col;
+  padding: 20px;
+  background-color: var(--c_white-all);
+  border-radius: $br_default;
+}
+
+%h1 {
+  font-weight: 600;
+  font-size: $fs_h1;
+}
+
+%h2 {
+  font-weight: 600;
+  font-size: $fs_h2;
+  color: var(--c_black);
+
+  @media screen and (max-width: $m_phone) {
+    font-size: 20px;
+  }
+}
+
+%subtitle {
+  font-weight: 600;
+  font-size: $fs_subtitle;
+
+  @media screen and (max-width: $m_phone) {
+    font-size: 18px;
+  }
+}
+
+%textfield {
+  height: 50px;
+  width: 100%;
+
+  padding: 0 15px;
+
+  border: $b_input;
+  border-radius: 5px;
+  outline: none !important;
+  background-color: var(--c_light);
+  color: var(--c_dark);
+
+  &:focus {
+    border-color: var(--c_blue) !important;
+  }
+
+  &:not(:placeholder-shown) {
+    border-color: var(--c_dark);
+  }
+
+  &.borderless {
+    border: none !important;
+    background-color: var(--c_light);
+    height: 48px;
+  }
+}
+
+// mixins
+
+@mixin wrapper($pd) {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $pd;
+}
+
+@mixin form() {
+  @extend %flex-col;
+
+  max-width: 650px;
+  width: 100%;
+
+  padding: 60px;
+  margin: 0 auto;
+
+  background-color: var(--c_white-all);
+  border-radius: $br_default;
+
+  @media screen and (max-width: 768px) {
+    & {
+      padding: 40px 20px;
+    }
+  }
+}
+
+@mixin flex-col-gap($gap) {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin-bottom: $gap;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@mixin flex-gap($gap) {
+  display: flex;
+
+  & > * {
+    margin-right: $gap;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

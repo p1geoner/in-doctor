@@ -1,0 +1,80 @@
+// all styles
+.checkbox,
+.radio {
+  cursor: pointer;
+  color: var(--c_dark);
+
+  input {
+    display: none;
+  }
+
+  span {
+    display: flex;
+    align-items: flex-start;
+
+    color: var(--white-faded);
+    font-size: 16px;
+    line-height: 140%;
+    font-weight: 400;
+
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    &::before {
+      content: '';
+      display: block;
+      box-sizing: border-box;
+
+      width: 18px;
+      min-width: 18px;
+      height: 18px;
+
+      border-radius: 4px;
+      border: 1px solid var(--c_grey);
+      margin-right: 10px;
+
+      transition: border, background 0.2s linear;
+    }
+
+    a {
+      color: var(--white-default);
+      font-size: 16px;
+    }
+  }
+}
+
+// custom checkbox styles
+.checkbox {
+  input:checked + span::before {
+    border: 1px solid var(--white-default);
+    background-image: url('../../../assets/icons/ic_check.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 12px;
+  }
+
+  span::before {
+    border: 1px solid var(--white-faded);
+    background-position: center;
+    border-radius: 4px;
+  }
+}
+
+// custom radio styles
+.radio {
+  input:checked + span::before {
+    border: 5px solid var(--c_blue);
+    background-image: none;
+    background-color: var(--c_white-text);
+  }
+
+  span::before {
+    border-radius: 50%;
+  }
+}
+
+.disabled{
+  opacity: 0.5;
+}

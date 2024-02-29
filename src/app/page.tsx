@@ -1,95 +1,51 @@
-import Image from "next/image";
 import styles from "./page.module.css";
+import {Button, Checkbox, TextField} from "@/components/UI-Kit";
+import Questions from "@/components/UI/Questions/Questions";
+import PageWrapper from "@/components/UI-Kit/PageWrapper/PageWrapper";
+import SwiperImg from "@/components/UI/SwiperImages/SwiperImg";
+import Feedback from "@/components/UI/Feedback/Feedback";
+import Partners from "@/components/UI/Partners/Partners";
+import Advantages from "@/components/UI/Advantages/Advantages";
+import Intro from "@/components/UI/Intro/Intro";
+import SingleFileUpload from "@/components/UI-Kit/SingleFileUpload/SingleFileUpload";
+import ClientForm from "@/components/UI/ClientFormPage/ClientFormPage";
+import EmployeeForm from "@/components/UI/EmployeeFormPage/EmployeeFormPage";
+import {getAllCategory, getAllProducts} from "@/app/actions/getAllData";
+import ProductList from "@/components/ProductList/ProductList";
 
-export default function Home() {
+const meta = {
+  title: 'title',
+  description: 'description'
+}
+
+export default async function Home() {
+
+  const products = await getAllProducts();
+  const categories = await getAllCategory();
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Intro title={'Вызов медсестры на дом '}
+             subTitle={'Сервис подбора сертифицированных медсестер с вызовом на дом'}/>
+      <PageWrapper mainStyles={'main'} meta={meta}>
+        <div className={'innerWrapper'}>
+          {/*{products.results.map((product)=>{
+            return(<div>{product.title}</div>)
+          })}*/}
+          <ProductList categoriesList={categories} productsList={products}></ProductList>
+          <ClientForm></ClientForm>
+          <Advantages></Advantages>
+          <SwiperImg></SwiperImg>
+          <Partners></Partners>
+          <Questions></Questions>
+          <Feedback></Feedback>
+          <EmployeeForm></EmployeeForm>
         </div>
-      </div>
+        {/*<Button theme={'filled'}>Оставить заявку</Button>*/}
+        {/*   <Checkbox> Хочу учавствовать в акции <a href="">“Партнерская программа”</a></Checkbox>*/}
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      </PageWrapper>
+      {/*<TextField theme={'blue'} placeholder={'dsadasdas'}></TextField>*/}
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   );
 }

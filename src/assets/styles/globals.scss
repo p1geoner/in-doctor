@@ -1,0 +1,18 @@
+@import "variables";
+
+main{
+  background-color: var(--white-default);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.innerWrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+@media (max-width: 1440px) {
+  main{
+    padding: 0 20px;
+  }
+}

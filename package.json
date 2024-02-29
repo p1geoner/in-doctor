@@ -9,16 +9,29 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^1.6.7",
+    "base64-encode-file": "^1.0.7",
+    "clsx": "^2.1.0",
+    "formik": "^2.4.5",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "next": "14.1.0",
     "react": "^18",
+    "react-accessible-accordion": "^5.0.0",
     "react-dom": "^18",
-    "next": "14.1.0"
+    "react-select": "^5.8.0",
+    "sass": "^1.71.0",
+    "scss": "^0.2.4",
+    "swiper": "^11.0.6",
+    "usehooks-ts": "^2.15.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.1.0"
+    "eslint-config-next": "14.1.0",
+    "typescript": "^5"
   }
 }

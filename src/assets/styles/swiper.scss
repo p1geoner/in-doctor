@@ -1,0 +1,39 @@
+.custom-prev,
+.custom-next,
+.custom-next-feedback,
+.custom-prev-feedback{
+  position: relative;
+  display: flex;
+  left: 0;
+  bottom: 0 !important;
+  border-radius: 50%;
+  &::after {
+    content: '';
+    font-size: 20px;
+    width: 42px;
+    height: 42px;
+    background-image: url("../../assets/images/next.svg");
+  }
+}
+
+.custom-prev, .custom-prev-feedback {
+  &::after {
+    transform: rotateY(180deg);
+  }
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: start;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.swiper-button-next {
+
+}

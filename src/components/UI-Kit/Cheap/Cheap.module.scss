@@ -1,0 +1,108 @@
+@import '@/assets/styles/templates.module';
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  box-sizing: border-box;
+  border-radius: 100px;
+  cursor: pointer;
+  border: 2px solid transparent;
+
+  font-size: 16px;
+  font-weight: 400;
+
+  &:hover, &:active{
+    transition: all 0.15s ease-in-out;
+  }
+
+  //&:active {
+  //  opacity: 0.5;
+  //}
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.outlined {
+  border: 1px solid var(--blue-deafault);
+  background-color: transparent;
+  color: var(--blue-dark);
+
+  &:hover {
+    background-color: var(--blue-dark);
+    border: 1px solid var(--blue-dark);
+    color: var(--white-default);
+  }
+  &:active {
+    background-color: var(--blue-messy);
+    border: 1px solid var(--blue-messy);
+    color: var(--white-default);
+  }
+  //&:disabled {
+  //  color: var(--c_grey);
+  //  border: 1px solid var(--c_grey);
+  //  background-color: transparent;
+  //}
+}
+
+.filled {
+  border: 1px solid var(--blue-messy);
+  background-color: var(--blue-messy);
+  color: var(--white-default);
+
+  &:hover {
+    background-color: var(--blue-dark);
+    color: var(--white-default);
+  }
+
+  &:active {
+    background-color: var(--blue-messy);
+    border: 1px solid var(--blue-messy);
+    color: var(--white-default);
+  }
+  //&:disabled {
+  //  border: 1px solid var(--c_grey);
+  //  background-color: var(--c_grey);
+  //}
+}
+
+.white {
+  border: 1px solid var(--white-default);
+  background-color: transparent;
+  color: var(--white-default);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+
+  &:hover {
+    border: 1px solid var(--white-default);
+    background-color: var(--white-default);
+    color: var(--blue-dark);
+  }
+
+  &:active {
+    background: #F6F6F6;
+    border: 1px solid #F6F6F6;
+  }
+}
+
+
+
+.defaultSize {
+  padding: 12px 29px;
+  line-height: 20px;
+  border-radius: 100px;
+}
+
+.small {
+  padding: 8px 16px;
+  font-weight: 500;
+  border-width: 1px;
+}
