@@ -36,47 +36,7 @@ const Form = observer(() => {
     {
       value: 1000,
       label: 'Выезд: 1 000₽'
-    },
-    {
-      value: 2000,
-      label: '2 Выезда: 2 000₽'
-    },
-    {
-      value: 3000,
-      label: '3 Выезда: 2000₽'
-    },
-    {
-      value: 4000,
-      label: '4 Выезда: 4 000₽'
-    },
-    {
-      value: 5000,
-      label: '5 Выездов: 5 000₽'
-    },
-    {
-      value: 6000,
-      label: '6 Выездов: 6 000₽'
-    },
-    {
-      value: 7000,
-      label: '7 Выездов: 7 000₽'
-    },
-    {
-      value: 8000,
-      label: '8 Выездов: 8 000₽'
-    },
-    {
-      value: 9000,
-      label: '9 Выездов: 9 000₽'
-    },
-    {
-      value: 9000,
-      label: '10 Выездов (скидка 10%): 9 000₽'
-    },
-    {
-      value: 1300,
-      label: 'Выезд в праздничный день: 1 300₽'
-    },
+    }
   ]
   const [isRequesting, setIsRequesting] = useState(false);
   const [isSucces, setIsSucces] = useState(false);
@@ -100,7 +60,7 @@ const Form = observer(() => {
       phone: '',
       address: '',
       description: '',
-      delivery: 0,
+      delivery: 1000,
       directionImage: ''
     },
 
@@ -194,15 +154,16 @@ const Form = observer(() => {
                   isReset={false}
                 />
               </div>
+              {/*<div className={styles.formWrapper}>*/}
+              {/*  <h3>Доставка</h3>*/}
+              {/*  <Select placeholder={'Доставка'} options={deliveryData}*/}
+              {/*          value={deliveryData.find((option) => option.value === formik.values.delivery)}*/}
+              {/*          onChange={(option) =>*/}
+              {/*            formik.setFieldValue('delivery', option?.value)*/}
+              {/*          }/>*/}
+              {/*</div>*/}
               <div className={styles.formWrapper}>
-                <h3>Доставка</h3>
-                <Select placeholder={'Доставка'} options={deliveryData}
-                        value={deliveryData.find((option) => option.value === formik.values.delivery)}
-                        onChange={(option) =>
-                          formik.setFieldValue('delivery', option?.value)
-                        }/>
-              </div>
-              <div className={styles.formWrapper}>
+                <h3>Ваш заказ</h3>
                 {productsStore.productsCard.map((product)=><ProductItem product={product}/>)}
               </div>
             </div>

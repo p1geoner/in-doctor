@@ -112,29 +112,30 @@ const Form = () => {
         onChange={formik.handleChange}
         placeholder='Промокод (если есть)'
       />
-      <SingleFileUpload
+      <div className={styles.group}>
+        <SingleFileUpload
         label={'Загрузить сертификат медсестры'}
         onChange={(file: File | null) => {
-          formik.setFieldValue('certificate', file);
-        }}
+        formik.setFieldValue('certificate', file);
+      }}
         wrapperClassname={styles.field}
         isReset={false}
-      />
-      <SingleFileUpload
-        label={'Загрузить селфи с паспортом'}
-        onChange={(file: File | null) => {
-          formik.setFieldValue('photoWithPassport', file);
-        }}
-        wrapperClassname={styles.field}
-        isReset={false}
-      />
-      <Checkbox checked={formik.values.affiliateProgram} onChange={(e)=> formik.setFieldValue('affiliateProgram',e.target.checked)} >Хочу учавствовать в акции <a href="">“Партнерская программа”</a></Checkbox>
-
+        />
+        <SingleFileUpload
+          label={'Загрузить селфи с паспортом'}
+          onChange={(file: File | null) => {
+            formik.setFieldValue('photoWithPassport', file);
+          }}
+          wrapperClassname={styles.field}
+          isReset={false}
+        />
+        <Checkbox checked={formik.values.affiliateProgram} onChange={(e)=> formik.setFieldValue('affiliateProgram',e.target.checked)} >Хочу учавствовать в акции <a href="">“Партнерская программа”</a></Checkbox>
+      </div>
       <Button theme='white' type='submit' className={styles.btn}>
         Отправить
       </Button>
       <p className={styles.alert}>Нажимая на кнопку, вы соглашаетесь с <a href="">Условиями обработки персональных данных</a></p>
-      <div className={loadingStyles}><h3>Спасибо за заказ!</h3> <p>Наш менеджер перезвонит вам в течение пяти минут для подтверждения  заказа.</p></div>
+      <div className={loadingStyles}><h3>Спасибо за заявку!</h3> <p>Наш консультант перезвонит вам в течение пяти минут.</p></div>
     </form>
   );
 };

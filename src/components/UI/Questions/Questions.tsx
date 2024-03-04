@@ -39,7 +39,7 @@ const Questions = ( ) => {
             <IcHelp></IcHelp>
             <p> Не нашли ответ на свой вопрос?</p>
           </div>
-          <a style={{width:'100%'}} className={styles.link} href="">Позвонить в поддержку</a>
+          <a style={{width:'100%'}} className={styles.link} href="tel:+79955373712">Позвонить в поддержку</a>
           {/*<Button  theme={"filled"}>Позвонить в поддержку</Button>*/}
         </div>
      </div>

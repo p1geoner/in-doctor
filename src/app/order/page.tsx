@@ -11,16 +11,19 @@ import EmployeeForm from "@/components/UI/EmployeeFormPage/EmployeeFormPage";
 import {getAllCategory, getAllProducts} from "@/app/actions/getAllData";
 import ProductList from "@/components/ProductList/ProductList";
 import OrderForm from "@/components/UI/Form/OrderForm/OrderForm";
+import Head from "next/head";
 
 const meta = {
   title: 'title',
   description: 'description'
 }
-
 export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Медицинские услуги на дому 24/7 - Сервис «Наш доктор»</title>
+      </Head>
       <PageWrapper mainStyles={'main'} meta={meta}>
         <div className={'innerWrapper'}>
             <OrderForm></OrderForm>

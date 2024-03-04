@@ -12,10 +12,13 @@ import ClientForm from "@/components/UI/ClientFormPage/ClientFormPage";
 import EmployeeForm from "@/components/UI/EmployeeFormPage/EmployeeFormPage";
 import {getAllCategory, getAllProducts} from "@/app/actions/getAllData";
 import ProductList from "@/components/ProductList/ProductList";
+import Head from "next/head";
+import {Metadata} from "next";
 
-const meta = {
-  title: 'title',
-  description: 'description'
+export const metadata: Metadata = {
+  title: 'Медицинские услуги на дому 24/7 - Сервис «Наш доктор»',
+  description: 'Предлагаем индивидуальный подход и удобство медицинских услуг на дому для всех пациентов. Гибкое расписание, профессиональная помощь в городе и сельской местности. Безопасный и удобный выбор для пожилых людей и инвалидов. Медсестра на дом в Вашем городе, вызов медсестер на дом для оказания медицинских услуг. Проверенные сертифицированные медсестры. Вызвать медсестру на дом для оказания платных медуслуг. Сервис «Наш доктор» делает здоровье доступным для вас.',
+  keywords: 'к Врачу, Анализ, Уколы, Капельница, капельница +на дом, капельница +от запоя, прокапаться, Медсестра +на дом, анализы +на дому, сиделка, Медсестра на дом'
 }
 
 export default async function Home() {
@@ -26,7 +29,7 @@ export default async function Home() {
     <>
       <Intro title={'Вызов медсестры на дом '}
              subTitle={'Сервис подбора сертифицированных медсестер с вызовом на дом'}/>
-      <PageWrapper mainStyles={'main'} meta={meta}>
+      <PageWrapper mainStyles={'main'}>
         <div className={'innerWrapper'}>
           {/*{products.results.map((product)=>{
             return(<div>{product.title}</div>)

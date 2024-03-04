@@ -124,7 +124,7 @@ const Header = observer(() => {
           </nav>
           <button className={styles.button}><IcCity />{city}</button>
           <div className={styles.buttons}>
-            <LinkBtn href={''}><IcPhone /></LinkBtn>
+            <LinkBtn href={'tel:+79955373712'}><IcPhone /></LinkBtn>
             <div onClick={()=>setIsPopoverOpen(true)} className={styles.cardBtn}>
               {ProductStore.count >0 && <div>{ProductStore.count}</div>}
               <Button theme={'filled'}> <IcCart /></Button>

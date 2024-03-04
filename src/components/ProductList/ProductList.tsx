@@ -25,6 +25,12 @@ const Productlist:FC<ProductsProps> = observer(({categoriesList,productsList}) =
   const [pickedCategories,setPickedCategories]= useState<number[]>([]);
   const [search, setSearch]= useState('')
   const [openFilters, setOpenFilters] = useState(false);
+  const [isMobile, setIsMobile]= useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, []);
+
   useEffect(() => {
     const productsLocalStorage =localStorage.getItem('card');
     if(productsLocalStorage !== null){
@@ -93,7 +99,7 @@ const Productlist:FC<ProductsProps> = observer(({categoriesList,productsList}) =
           <input placeholder={'Поиск по услугам'} onKeyDown={(e)=> e.key === 'Enter' && fetchProductsSearh()} onChange={(e)=> setSearch(e.target.value)} value={search} type="text"/>
           <IcSearch onClick={()=> fetchProductsSearh()} />
         </div>
-        <Button className={styles.filterButton} onClick={()=> setOpenFilters(true)} theme={'outlined'}><IcFilter /> Фильтры</Button>
+        {isMobile && <Button className={styles.filterButton} onClick={()=> setOpenFilters(true)} theme={'outlined'}><IcFilter /> Фильтры</Button>}
         <div onClick={()=>setOpenFilters(false)} className={popupStyles}>
           <div onClick={(event) => event.stopPropagation()} className={styles.popupInner}>
             <div className={styles.filtersHeader}>
