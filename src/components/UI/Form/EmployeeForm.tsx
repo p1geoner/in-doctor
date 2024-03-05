@@ -63,13 +63,10 @@ const Form = () => {
       const response = await FeedbackService.createFeedBackEmployee(formData).finally(() => {
         setIsRequesting(false)
         setIsSucces(true)
-        setTimeout(()=>{setIsSucces(false)},2000)
         formik.resetForm();
       });
-      console.log(response)
       if( response.status === 201){
         setIsSucces(true)
-        setTimeout(()=>{setIsSucces(false)},2000)
         formik.resetForm();
       }
     },
