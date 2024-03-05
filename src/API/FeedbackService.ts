@@ -1,5 +1,4 @@
 import makeRequest from '@/API/makeRequest';
-
 class FeedbackService {
   createFeedBack(data: FormData | object) {
     return makeRequest<void>({
