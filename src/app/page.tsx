@@ -31,9 +31,6 @@ export default async function Home() {
              subTitle={'Сервис подбора сертифицированных медсестер с вызовом на дом'}/>
       <PageWrapper mainStyles={'main'}>
         <div className={'innerWrapper'}>
-          {/*{products.results.map((product)=>{
-            return(<div>{product.title}</div>)
-          })}*/}
           <ProductList categoriesList={categories} productsList={products}></ProductList>
           <ClientForm></ClientForm>
           <Advantages></Advantages>
@@ -43,12 +40,7 @@ export default async function Home() {
           <Feedback></Feedback>
           <EmployeeForm></EmployeeForm>
         </div>
-        {/*<Button theme={'filled'}>Оставить заявку</Button>*/}
-        {/*   <Checkbox> Хочу учавствовать в акции <a href="">“Партнерская программа”</a></Checkbox>*/}
-
       </PageWrapper>
-      {/*<TextField theme={'blue'} placeholder={'dsadasdas'}></TextField>*/}
-
     </>
   );
 }
