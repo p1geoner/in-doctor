@@ -22,6 +22,6 @@ jobs:
           script: |
             cd /home/somebody/cs/domdoctor/
             git pull
-            npm i
-            npm run build
-            pm2 start npm -- start
+            /home/somebody/.nvm/versions/node/v20.11.0/bin/npm i
+            /home/somebody/.nvm/versions/node/v20.11.0/bin/npm run build
+            /home/somebody/.nvm/versions/node/v20.11.0/bin/pm2 start npm -- start
