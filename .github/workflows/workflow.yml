@@ -24,5 +24,5 @@ jobs:
             git pull
             export PATH="$PATH:/home/somebody/.nvm/versions/node/v20.11.0/bin"
             npm i
-#            /home/somebody/.nvm/versions/node/v20.11.0/bin/npm run build
-#            /home/somebody/.nvm/versions/node/v20.11.0/bin/pm2 start npm -- start
+            npm run build
+            pm2 start npm -- start
