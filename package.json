@@ -12,6 +12,7 @@
     "axios": "^1.6.7",
     "base64-encode-file": "^1.0.7",
     "clsx": "^2.1.0",
+    "cookies": "^0.9.1",
     "formik": "^2.4.5",
     "mobx": "^6.12.0",
     "mobx-react": "^9.1.0",
