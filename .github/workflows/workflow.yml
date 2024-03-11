@@ -25,4 +25,5 @@ jobs:
             export PATH="$PATH:/home/somebody/.nvm/versions/node/v20.11.0/bin"
             npm i
             npm run build
+            pm2 delete -s npm
             pm2 start npm -- start
