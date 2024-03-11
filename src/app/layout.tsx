@@ -28,6 +28,9 @@ export default function RootLayout({
   inter.style.fontWeight = 700;
   return (
     <html lang="ru">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className={inter.className} >
       <Header />
       {children}

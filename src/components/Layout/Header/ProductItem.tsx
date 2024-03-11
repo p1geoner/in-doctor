@@ -27,7 +27,7 @@ const ProductItem:FC<ProductsProps> = ({product}) => {
         <p className={styles.title}>{product.title}</p>
         <div className={styles.button}>
           <CardButton isCheckedCard={false} product={product} />
-          {product.discount_price ? <p className={styles.price}><span>{product.discount_price}</span>{product.price}₽</p> : <p className={styles.price}>{product.price}₽</p> }
+          {product.discount_price ? <p className={styles.price}><span>{product.price}</span>{product.discount_price}₽</p> : <p className={styles.price}>{product.price}₽</p> }
 
         </div>
       </div>
