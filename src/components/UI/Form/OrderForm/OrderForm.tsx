@@ -171,7 +171,7 @@ const Form = observer(() => {
               <div className={styles.formWrapper}>
                 <h3>Ваш заказ</h3>
                 <div>
-                  <div className={styles.textLine}><p>Услуги({productsStore.amount})</p> <span>{productsStore.sum} ₽</span></div>
+                  <div className={styles.textLine}><p>Услуги({productsStore.count})</p> <span>{productsStore.sum} ₽</span></div>
                   <div className={styles.textLine}><p>Доставка</p> <span>{formik.values.delivery} ₽</span></div>
                 </div>
                 <div className={styles.finish}>

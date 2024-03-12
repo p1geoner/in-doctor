@@ -30,7 +30,11 @@ const Header = observer(() => {
     productsStore.setSum(0);
     let sumBuff = 0
     productsStore.productsCard.forEach((product)=>{
-      sumBuff+=product.price*product.amount;
+      if(product.discount_price){
+        sumBuff+=product.discount_price*product.amount;
+      }else {
+        sumBuff+=product.price*product.amount;
+      }
     })
     productsStore.setSum(sumBuff)
   }, [productsStore.productsCard]);

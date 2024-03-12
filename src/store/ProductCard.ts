@@ -28,7 +28,10 @@ class ProductStore {
     this.sum = newSum;
   }
   updateCount() {
-    this.count = this.productsCard.length;
+    const productsAmount =this.productsCard.map((product)=>{
+      return   product.amount
+    });
+    this.count = productsAmount.reduce((totalCount, amount) => totalCount + amount, 0);
   }
 
   setProductsCard(products: ProductCard[]) {
