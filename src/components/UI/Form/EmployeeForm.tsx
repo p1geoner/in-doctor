@@ -48,7 +48,7 @@ const Form = () => {
       formData.append('city', values.city);
       formData.append('promo_code', values.promoCode);
       if(values.affiliateProgram){
-        formData.append('affiliateProgram', 'true')
+        formData.append('affiliate_program', 'true')
       }
 
       if (values.certificate !== null) {
