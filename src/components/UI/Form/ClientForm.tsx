@@ -101,7 +101,7 @@ const Form = () => {
           <Button theme='white' type='submit' className={styles.btn}>
             Отправить
           </Button>
-          <p className={styles.alert}>Нажимая на кнопку, вы соглашаетесь с <a href="">Условиями обработки персональных данных</a></p>
+          <p className={styles.alert}>Нажимая на кнопку, вы соглашаетесь с <a href="/политика_конфиденциальности.docx">Условиями обработки персональных данных</a></p>
           <div className={loadingStyles}><h3>Спасибо за заказ!</h3> <p>Наш менеджер перезвонит вам в течение пяти минут для подтверждения  заказа.</p></div>
         </form>
   );
