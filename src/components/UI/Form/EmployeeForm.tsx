@@ -126,7 +126,7 @@ const Form = () => {
           wrapperClassname={styles.field}
           isReset={false}
         />
-        <Checkbox checked={formik.values.affiliateProgram} onChange={(e)=> formik.setFieldValue('affiliateProgram',e.target.checked)} >Хочу учавствовать в акции <a href="">“Партнерская программа”</a></Checkbox>
+        <Checkbox checked={formik.values.affiliateProgram} onChange={(e)=> formik.setFieldValue('affiliateProgram',e.target.checked)} >Хочу учавствовать в акции <a href="/Партнерская_программа_заработка_для_врачей.docx">“Партнерская программа”</a></Checkbox>
       </div>
       <Button theme='white' type='submit' className={styles.btn}>
         Отправить
