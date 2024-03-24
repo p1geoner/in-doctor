@@ -1,41 +1,31 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+
     // compress: true,
     // poweredByHeader: false,
     // pageExtensions: ['page.tsx', 'page.ts', 'page.jsx', 'page.js'],
-    images: {
-        // formats: ['image/avif', 'image/webp'],
-        domains: [
-            // 'back.sakhipoteka.study-traektoria.ru',
-        ],
-        remotePatterns: [
-            {
-                hostname: '**.img.avito.st',
-            },
-        ],
-    },
     eslint: {
         ignoreDuringBuilds: true,
     },
-    headers: () => [
-        {
-            source: '/',
-            headers: [
-                {
-                    key: 'Cache-Control',
-                    value: 'no-store',
-                },
-            ],
-        },
-    ],
-    async rewrites() {
-        return [
-            {
-                source: '/',
-                destination: '/main',
-            },
-        ];
-    },
+    // headers: () => [
+    //     {
+    //         source: '/',
+    //         headers: [
+    //             {
+    //                 key: 'Cache-Control',
+    //                 value: 'no-store',
+    //             },
+    //         ],
+    //     },
+    // ],
+    // async rewrites() {
+    //     return [
+    //         {
+    //             source: '/',
+    //             destination: '/main',
+    //         },
+    //     ];
+    // },
 
     webpack(config) {
         // Grab the existing rule that handles SVG imports

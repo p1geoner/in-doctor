@@ -20,7 +20,7 @@ const ProductItem:FC<ProductsProps> = ({product}) => {
   }
 
   return (
-    <div className={styles.itemWrapper}>
+    <div key={product.id} className={styles.itemWrapper}>
       <p className={styles.title}>{product.title}</p>
       <div className={styles.innerWrapper}>
           <p className={styles.count}>{product.amount}шт.</p>

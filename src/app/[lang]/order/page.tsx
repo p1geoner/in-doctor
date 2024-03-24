@@ -8,7 +8,7 @@ import Advantages from "@/components/UI/Advantages/Advantages";
 import Intro from "@/components/UI/Intro/Intro";
 import ClientForm from "@/components/UI/ClientFormPage/ClientFormPage";
 import EmployeeForm from "@/components/UI/EmployeeFormPage/EmployeeFormPage";
-import {getAllCategory, getAllProducts} from "@/app/actions/getAllData";
+import {getAllCategory, getAllProducts} from "@/app/[lang]/actions/getAllData";
 import ProductList from "@/components/ProductList/ProductList";
 import OrderForm from "@/components/UI/Form/OrderForm/OrderForm";
 import Head from "next/head";

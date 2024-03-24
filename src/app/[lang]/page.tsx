@@ -10,10 +10,13 @@ import Intro from "@/components/UI/Intro/Intro";
 import SingleFileUpload from "@/components/UI-Kit/SingleFileUpload/SingleFileUpload";
 import ClientForm from "@/components/UI/ClientFormPage/ClientFormPage";
 import EmployeeForm from "@/components/UI/EmployeeFormPage/EmployeeFormPage";
-import {getAllCategory, getAllProducts} from "@/app/actions/getAllData";
+import {getAllCategory, getAllCity, getAllCityByCountry, getAllProducts} from "@/app/[lang]/actions/getAllData";
 import ProductList from "@/components/ProductList/ProductList";
 import Head from "next/head";
 import {Metadata} from "next";
+import {i18n} from "../../../i18n.config";
+import Link from "next/link";
+import {TCityRead, TCountry} from "@/types/types";
 
 export const metadata: Metadata = {
   title: 'Медицинские услуги на дому 24/7 - Сервис «Наш доктор»',
@@ -21,17 +24,39 @@ export const metadata: Metadata = {
   keywords: 'к Врачу, Анализ, Уколы, Капельница, капельница +на дом, капельница +от запоя, прокапаться, Медсестра +на дом, анализы +на дому, сиделка, Медсестра на дом'
 }
 
-export default async function Home() {
 
-  const products = await getAllProducts();
-  const categories = await getAllCategory();
+
+export async function generateStaticParams() {
+
+  const countries:TCountry[] = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/api/countries/`, { next: {revalidate:60}}).then((res) => res.json());
+
+  const cities = countries.map((country) => {
+    let currency = country.currency
+    return country.cities.map((city)=>({
+      currency: currency,
+      ...city
+    }))
+  })
+
+  return cities.flat().map((city: TCityRead ) => ({
+    lang: city.localization,
+  }))
+}
+
+export default async function Home({params: { lang }}: { params: { lang: string } }) {
+
+  const products = await getAllProducts({lang});
+  const categories = await getAllCategory({lang});
+  const cities = await getAllCity();
+  const countries = await getAllCityByCountry({locale: 'ru'})
+  console.log(countries);
   return (
     <>
       <Intro title={'Вызов медсестры на дом '}
              subTitle={'Сервис подбора сертифицированных медсестер с вызовом на дом'}/>
       <PageWrapper mainStyles={'main'}>
         <div className={'innerWrapper'}>
-          <ProductList categoriesList={categories} productsList={products}></ProductList>
+          {cities.includes(lang) ? <ProductList categoriesList={categories} productsList={products}></ProductList> : <>{lang}</>}
           <ClientForm></ClientForm>
           <Advantages></Advantages>
           <SwiperImg></SwiperImg>

@@ -20,7 +20,6 @@ class ProductStore {
       getOrderProducts: action,
     });
   }
-
   setCount(newCount: number) {
     this.count = newCount;
   }

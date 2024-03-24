@@ -73,7 +73,6 @@ const Productlist:FC<ProductsProps> = observer(({categoriesList,productsList}) =
     }
 
   }, [openFilters]);
-
   return (
     <div id={'услуги'} className={styles.wrapper}>
       <h2>Услуги</h2>
@@ -138,7 +137,7 @@ const Productlist:FC<ProductsProps> = observer(({categoriesList,productsList}) =
 
       <div className={styles.productsWrapper}>
         {products.results.map((product) => {
-          return (<ProductItem cardProducts={productStore.productsCard} setCardProducts={productStore.setProductsCard}  product={product} />)
+          return (<ProductItem key={product.id} cardProducts={productStore.productsCard} setCardProducts={productStore.setProductsCard}  product={product} />)
         })}
       </div>
       {products.next !== null && <Button style={{width:'100%',marginTop:'30px'}} theme={"outlined"} onClick={()=>{fetchMoreProducts()}} >Смотреть больше</Button>}
