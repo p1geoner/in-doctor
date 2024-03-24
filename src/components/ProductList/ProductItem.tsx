@@ -1,5 +1,5 @@
 "use client"
-import React, { FC } from 'react';
+import React, {FC, useId} from 'react';
 
 import styles from './ProductList.module.scss';
 import {Product, ProductCard} from "@/types/types";
@@ -12,9 +12,9 @@ interface ProductsProps {
   setCardProducts:(products: ProductCard[]) => void
 }
 const ProductItem:FC<ProductsProps> = ({product,setCardProducts,cardProducts,}) => {
-
+  const id = useId()
   return (
-    <div className={styles.itemWrapper}>
+    <div key={product.id + id} className={styles.itemWrapper}>
       <img src={product.image} alt=""/>
       <p className={styles.title}>{product.title}</p>
       <div>

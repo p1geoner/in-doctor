@@ -1,5 +1,5 @@
 "use client"
-import React, {Dispatch, FC, SetStateAction, useEffect, useState} from 'react';
+import React, {Dispatch, FC, SetStateAction, useEffect, useId, useState} from 'react';
 
 import styles from './ProductList.module.scss';
 import {Category, Product, ProductCard, ProductsResponse} from "@/types/types";
@@ -19,8 +19,10 @@ const ProductItem:FC<ProductsProps> = ({product}) => {
 
   }
 
+  const id = useId()
+
   return (
-    <div className={styles.itemWrapper}>
+    <div key={id} className={styles.itemWrapper}>
       <div className={styles.adaptiveRemove}><IcRemove onClick={()=>removeItem()}/></div>
       <img src={product.image} alt=""/>
       <div>

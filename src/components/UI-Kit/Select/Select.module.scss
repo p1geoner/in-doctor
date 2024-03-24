@@ -3,7 +3,6 @@
 .selectWrapper {
   @include flex-col-gap(8px);
   width: 100%;
-
   label {
     color: var(--c_black);
     line-height: 20px;

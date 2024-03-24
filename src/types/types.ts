@@ -27,3 +27,23 @@ export interface Category {
   title: string
 }
 
+
+export type TCity = {
+  id: number;
+  name: string;
+  localization: string
+}
+export type TCityRead = {
+  id: number;
+  name: string;
+  localization: string;
+  currency: string;
+}
+
+export type TCountry = {
+  id: number;
+  name: string;
+  currency: string;
+  cities: TCity[];
+  default_city: TCity;
+}
